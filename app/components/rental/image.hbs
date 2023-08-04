@@ -1,12 +1,6 @@
 {{yield}}
-  {{#if this.isLarge}}
-  <div class="image large">
-    <img ...attributes>
-    <small>View Smaller</small>
-  </div>
-{{else}}
-  <div class="image">
-    <img ...attributes>
-    <small>View Larger</small>
-  </div>
-{{/if}}
+  <button type="button" class="image {{if this.isLarge "large"}}" {{on "click" this.toggleSize}}>
+  <img ...attributes>
+  <small>View {{if this.isLarge "Smaller" "Larger"}}</small>
+  </button>
+

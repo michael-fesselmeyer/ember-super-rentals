@@ -1,8 +1,8 @@
 {{yield}}
 <article class="rental">
     <Rental::Image
-    src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
-    alt="A picture of Grand Old Mansion"
+    src={{@rental.image}}
+    alt="A picture of {{@rental.title}}"
   />
   <div class="details">
 <h3>{{@rental.title}}</h3>
@@ -20,11 +20,11 @@
     </div>
   </div>
   <Map
-    @lat="37.7749"
-    @lng="-122.4194"
+    @lat={{@rental.location.lat}}
+    @lng={{@rental.location.lng}}
     @zoom="9"
     @width="150"
     @height="150"
-    alt="A map of Grand Old Mansion"
-  />
+    alt="A map of {{@rental.title}}"
+/>
 </article>

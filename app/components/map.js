@@ -13,7 +13,7 @@ export default class MapComponent extends Component {
 
     return `${MAPBOX_API}/${coordinates}/${dimensions}@2x?${accessToken}`;
   }
-    get token() {
-      return encodeURIComponent(ENV.MAPBOX_ACCESS_TOKEN);
-    }
-  }  
+  get token() {
+    return encodeURIComponent(ENV.MAPBOX_ACCESS_TOKEN);
+  }
+}

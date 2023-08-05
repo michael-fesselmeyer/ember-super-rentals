@@ -41,7 +41,7 @@ module('Integration | Component | rental/detailed', function (hooks) {
 
   test('it renders detailed information about a rental property', async function (assert) {
     await render(hbs`<Rental::Detailed @rental={{this.rental}} />`);
-    
+
     assert.dom('article').hasClass('rental');
     assert.dom('article h3').containsText('About Grand Old Mansion');
     assert.dom('article .detail.owner').containsText('Veruca Salt');

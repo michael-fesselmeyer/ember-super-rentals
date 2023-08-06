@@ -31,6 +31,7 @@ module('Integration | Component | map', function (hooks) {
       src.startsWith('https://api.mapbox.com/'),
       'the src starts with "https://api.mapbox.com/"'
     );
+
     assert.ok(
       src.includes('-122.4184,37.7797,10'),
       'the src should include the lng,lat,zoom parameter'
@@ -46,6 +47,7 @@ module('Integration | Component | map', function (hooks) {
       'the src should include the escaped access token'
     );
   });
+
   test('it updates the `src` attribute when the arguments change', async function (assert) {
     this.setProperties({
       lat: 37.7749,
@@ -56,12 +58,12 @@ module('Integration | Component | map', function (hooks) {
     });
 
     await render(hbs`<Map
-        @lat={{this.lat}}
-        @lng={{this.lng}}
-        @zoom={{this.zoom}}
-        @width={{this.width}}
-        @height={{this.height}}
-      />`);
+      @lat={{this.lat}}
+      @lng={{this.lng}}
+      @zoom={{this.zoom}}
+      @width={{this.width}}
+      @height={{this.height}}
+    />`);
 
     let img = find('.map img');
 
@@ -106,30 +108,31 @@ module('Integration | Component | map', function (hooks) {
       'the src should include the width,height and @2x parameter'
     );
   });
+
   test('the default alt attribute can be overridden', async function (assert) {
     await render(hbs`<Map
-        @lat="37.7797"
-        @lng="-122.4184"
-        @zoom="10"
-        @width="150"
-        @height="120"
-        alt="A map of San Francisco"
-      />`);
+      @lat="37.7797"
+      @lng="-122.4184"
+      @zoom="10"
+      @width="150"
+      @height="120"
+      alt="A map of San Francisco"
+    />`);
 
     assert.dom('.map img').hasAttribute('alt', 'A map of San Francisco');
   });
 
   test('the src, width and height attributes cannot be overridden', async function (assert) {
     await render(hbs`<Map
-        @lat="37.7797"
-        @lng="-122.4184"
-        @zoom="10"
-        @width="150"
-        @height="120"
-        src="/assets/images/teaching-tomster.png"
-        width="200"
-        height="300"
-      />`);
+      @lat="37.7797"
+      @lng="-122.4184"
+      @zoom="10"
+      @width="150"
+      @height="120"
+      src="/assets/images/teaching-tomster.png"
+      width="200"
+      height="300"
+    />`);
 
     assert
       .dom('.map img')

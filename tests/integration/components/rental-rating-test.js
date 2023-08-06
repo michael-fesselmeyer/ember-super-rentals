@@ -1,26 +1,40 @@
 import { module, test } from 'qunit';
-import { setupRenderingTest } from 'super-rentals/tests/helpers';
+import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | rental-rating', function (hooks) {
+module('Integration | Component | rental-rating', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
+  test('it updates the score on upvoting and downvoting', async function(assert) {
     await render(hbs`<RentalRating />`);
 
-    assert.dom(this.element).hasText('');
+    assert.dom('.score').hasText('0');
 
-    // Template block usage:
-    await render(hbs`
-      <RentalRating>
-        template block text
-      </RentalRating>
-    `);
+    await this.element.querySelector('.upvote-button').click();
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom('.score').hasText('1');
+
+    await this.element.querySelector('.downvote-button').click();
+
+    assert.dom('.score').hasText('0');
+
+    await this.element.querySelector('.downvote-button').click();
+
+    assert.dom('.score').hasText('-1');
+  });
+
+  test('it prevents double-voting', async function(assert) {
+    await render(hbs`<RentalRating />`);
+
+    await this.element.querySelector('.upvote-button').click();
+    await this.element.querySelector('.upvote-button').click();
+
+    assert.dom('.score').hasText('1');
+
+    await this.element.querySelector('.downvote-button').click();
+    await this.element.querySelector('.downvote-button').click();
+
+    assert.dom('.score').hasText('-1');
   });
 });

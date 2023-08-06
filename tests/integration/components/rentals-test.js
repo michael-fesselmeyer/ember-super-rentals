@@ -71,7 +71,7 @@ module('Integration | Component | rentals', function (hooks) {
     assert.dom('.rentals input').exists();
 
     assert.dom('.rentals .results').exists();
-    assert.dom('.rentals .results li').exists({ count: 3 });
+    assert.dom('.rentals .results li').exists({ count: 12 });
 
     assert
       .dom('.rentals .results li:nth-of-type(1)')

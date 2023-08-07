@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, click, waitFor } from '@ember/test-helpers';
+import { render, click } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 module('Integration | Component | rental-rating', function (hooks) {
@@ -12,15 +12,12 @@ module('Integration | Component | rental-rating', function (hooks) {
     assert.dom('.score').hasText('0');
 
     await click('.upvote-button');
-    await waitFor('.score:contains("1")', { timeout: 2000 });
     assert.dom('.score').hasText('1');
 
     await click('.downvote-button');
-    await waitFor('.score:contains("0")', { timeout: 2000 });
     assert.dom('.score').hasText('0');
 
     await click('.downvote-button');
-    await waitFor('.score:contains("-1")', { timeout: 2000 });
     assert.dom('.score').hasText('-1');
   });
 
@@ -29,16 +26,16 @@ module('Integration | Component | rental-rating', function (hooks) {
 
     assert.dom('.score').hasText('0');
 
+    // Loop to upvote 5 times
     for (let i = 0; i < 5; i++) {
-      await this.element.querySelector('.upvote-button').click();
+      await click('.upvote-button');
     }
-
     assert.dom('.score').hasText('5');
 
+    // Loop to downvote 7 times
     for (let i = 0; i < 7; i++) {
-      await this.element.querySelector('.downvote-button').click();
+      await click('.downvote-button');
     }
-
     assert.dom('.score').hasText('-2');
   });
 });

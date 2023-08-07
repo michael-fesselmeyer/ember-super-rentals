@@ -27,6 +27,159 @@ module('Integration | Component | rentals', function (hooks) {
             'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.',
         },
         {
+          id: 'beachfront-bungalow',
+          title: 'Beachfront Bungalow',
+          owner: 'Charlie Bucket',
+          city: 'Miami',
+          location: {
+            lat: 25.7617,
+            lng: -80.1918,
+          },
+          category: 'Bungalow',
+          type: 'Community',
+          bedrooms: 2,
+          image:
+            'https://i0.wp.com/traveladdictedunicorn.com/wp-content/uploads/2022/07/travel-addicted-unicorn-795-x-447-px.jpg?resize=795%2C447&ssl=1',
+          description:
+            'This cozy bungalow offers stunning ocean views and direct access to the beach. Perfect for a relaxing getaway.',
+        },
+        {
+          id: 'mountain-retreat',
+          title: 'Mountain Retreat',
+          owner: 'Augustus Gloop',
+          city: 'Aspen',
+          location: {
+            lat: 39.1911,
+            lng: -106.8175,
+          },
+          category: 'Cabin',
+          type: 'Community',
+          bedrooms: 4,
+          image:
+            'https://cdn1.matadornetwork.com/blogs/1/2022/02/mountain-vacations-Taylor-River-Lodge.jpg',
+          description:
+            'Nestled in the mountains, this cabin is perfect for those seeking a peaceful retreat in the great outdoors.',
+        },
+        {
+          id: 'urban-loft',
+          title: 'Urban Loft',
+          owner: 'Arthur Slugworth',
+          city: 'New York',
+          location: {
+            lat: 40.7128,
+            lng: -74.006,
+          },
+          category: 'Loft',
+          type: 'Community',
+          bedrooms: 2,
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/4/47/New_york_times_square-terabass.jpg',
+          description:
+            'This modern loft in the heart of the city is perfect for those seeking the hustle and bustle of city life.',
+        },
+        {
+          id: 'country-cottage',
+          title: 'Country Cottage',
+          owner: 'Mike Teavee',
+          city: 'Nashville',
+          location: {
+            lat: 36.1627,
+            lng: -86.7816,
+          },
+          category: 'Cottage',
+          type: 'Community',
+          bedrooms: 3,
+          image:
+            'https://thehermitage.com/wp-content/uploads/2014/10/downtown-nashville.jpg',
+          description:
+            'This charming cottage is perfect for those seeking a peaceful retreat in the countryside, but still close to city amenities.',
+        },
+        {
+          id: 'lakeside-lodge',
+          title: 'Lakeside Lodge',
+          owner: 'Violet Beauregarde',
+          city: 'Lake Tahoe',
+          location: {
+            lat: 39.0968,
+            lng: -120.0324,
+          },
+          category: 'Lodge',
+          type: 'Community',
+          bedrooms: 5,
+          image:
+            'https://cdn1.matadornetwork.com/blogs/1/2022/02/mountain-vacations-Resort-at-Squaw-Creek-2.jpg',
+          description:
+            'This spacious lodge offers stunning lake views and is perfect for a family vacation or group retreat.',
+        },
+        {
+          id: 'desert-villa',
+          title: 'Desert Villa',
+          owner: 'Veruca Salt',
+          city: 'Palm Springs',
+          location: {
+            lat: 33.8303,
+            lng: -116.5453,
+          },
+          category: 'Villa',
+          type: 'Community',
+          bedrooms: 4,
+          image:
+            'https://www.travelandleisure.com/thmb/R6q6KgfNc5XYG9equcDdd6K1IfE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-colony-palms-pool-WHYGPS0423-066fafe845444ded9f8d59a02dba8c6b.jpg',
+          description:
+            'This luxurious villa is perfect for a relaxing getaway in the desert. Enjoy the private pool and stunning mountain views.',
+        },
+        {
+          id: 'city-penthouse',
+          title: 'City Penthouse',
+          owner: 'Willy Wonka',
+          city: 'Chicago',
+          location: {
+            lat: 41.8781,
+            lng: -87.6298,
+          },
+          category: 'Penthouse',
+          type: 'Community',
+          bedrooms: 3,
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/7/71/Chicago_from_North_Avenue_Beach_June_2015_panorama_2_cropped.jpg',
+          description:
+            'This luxurious penthouse offers stunning city views. Located in the heart of the city, it iss perfect for a stylish urban getaway.',
+        },
+        {
+          id: 'coastal-cabin',
+          title: 'Coastal Cabin',
+          owner: 'Charlie Bucket',
+          city: 'Monterey',
+          location: {
+            lat: 36.6002,
+            lng: -121.8947,
+          },
+          category: 'Cabin',
+          type: 'Community',
+          bedrooms: 2,
+          image:
+            'https://cdn1.matadornetwork.com/blogs/1/2022/02/mountain-vacations-Tordrillo-Moutain-Lodge-2.jpg',
+          description:
+            'This cozy cabin is located just steps from the beach. It iss the perfect place for a relaxing coastal getaway.',
+        },
+        {
+          id: 'farmhouse-retreat',
+          title: 'Farmhouse Retreat',
+          owner: 'Augustus Gloop',
+          city: 'Austin',
+          location: {
+            lat: 30.2672,
+            lng: -97.7431,
+          },
+          category: 'Farmhouse',
+          type: 'Community',
+          bedrooms: 4,
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/9/97/Austin2012-12-01.JPG',
+          description:
+            'This charming farmhouse offers a taste of country living with the convenience of a city nearby. It is the perfect place for a peaceful retreat.',
+        },
+        {
           id: 'urban-living',
           title: 'Urban Living',
           owner: 'Mike Teavee',
@@ -76,13 +229,38 @@ module('Integration | Component | rentals', function (hooks) {
     assert
       .dom('.rentals .results li:nth-of-type(1)')
       .containsText('Grand Old Mansion');
-
     assert
       .dom('.rentals .results li:nth-of-type(2)')
-      .containsText('Urban Living');
-
+      .containsText('Beachfront Bungalow');
     assert
       .dom('.rentals .results li:nth-of-type(3)')
+      .containsText('Mountain Retreat');
+    assert
+      .dom('.rentals .results li:nth-of-type(4)')
+      .containsText('Urban Loft');
+    assert
+      .dom('.rentals .results li:nth-of-type(5)')
+      .containsText('Country Cottage');
+    assert
+      .dom('.rentals .results li:nth-of-type(6)')
+      .containsText('Lakeside Lodge');
+    assert
+      .dom('.rentals .results li:nth-of-type(7)')
+      .containsText('Desert Villa');
+    assert
+      .dom('.rentals .results li:nth-of-type(8)')
+      .containsText('City Penthouse');
+    assert
+      .dom('.rentals .results li:nth-of-type(9)')
+      .containsText('Coastal Cabin');
+    assert
+      .dom('.rentals .results li:nth-of-type(10)')
+      .containsText('Farmhouse Retreat');
+    assert
+      .dom('.rentals .results li:nth-of-type(11)')
+      .containsText('Urban Living');
+    assert
+      .dom('.rentals .results li:nth-of-type(12)')
       .containsText('Downtown Charm');
   });
 

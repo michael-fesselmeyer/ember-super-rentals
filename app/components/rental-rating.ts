@@ -2,17 +2,18 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
-export default class RentalRatingComponent extends Component {
-  @tracked score = 0;
+interface RentalRatingArgs {}
+export default class RentalRatingComponent extends Component<RentalRatingArgs> {
+  @tracked score: number = 0;
 
   @action
-  upvote() {
+  upvote(): void {
     this.score++;
     console.log(this.score);
   }
 
   @action
-  downvote() {
+  downvote(): void {
     this.score--;
     console.log(this.score);
   }

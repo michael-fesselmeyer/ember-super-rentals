@@ -8,10 +8,12 @@ export default class RentalRatingComponent extends Component {
   @action
   upvote() {
     this.score++;
+    console.log(this.score);
   }
 
   @action
   downvote() {
     this.score--;
+    console.log(this.score);
   }
 }

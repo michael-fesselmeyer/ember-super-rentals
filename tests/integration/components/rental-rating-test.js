@@ -26,16 +26,16 @@ module('Integration | Component | rental-rating', function (hooks) {
 
     assert.dom('.score').hasText('0');
 
+    // Loop to upvote 5 times
     for (let i = 0; i < 5; i++) {
-      await this.element.querySelector('.upvote-button').click();
+      await click('.upvote-button');
     }
-
     assert.dom('.score').hasText('5');
 
+    // Loop to downvote 7 times
     for (let i = 0; i < 7; i++) {
-      await this.element.querySelector('.downvote-button').click();
+      await click('.downvote-button');
     }
-
     assert.dom('.score').hasText('-2');
   });
 });

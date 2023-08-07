@@ -37,4 +37,22 @@ module('Integration | Component | rental-rating', function (hooks) {
 
     assert.dom('.score').hasText('-1');
   });
+
+  test('it updates the score on multiple upvotes and downvotes', async function (assert) {
+    await render(hbs`<RentalRating />`);
+
+    assert.dom('.score').hasText('0');
+
+    for (let i = 0; i < 5; i++) {
+      await this.element.querySelector('.upvote-button').click();
+    }
+
+    assert.dom('.score').hasText('5');
+
+    for (let i = 0; i < 7; i++) {
+      await this.element.querySelector('.downvote-button').click();
+    }
+
+    assert.dom('.score').hasText('-2');
+  });
 });

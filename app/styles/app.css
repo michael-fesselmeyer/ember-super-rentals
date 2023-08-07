@@ -1,9 +1,4 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
 @import url("https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic");
-
-/**
- * Base Elements
- */
 
 * {
   margin: 0;
@@ -28,11 +23,11 @@ button {
 }
 
 body {
-  background: #f3f3f3;
+  background: #e5f7fa;
 }
 
 a {
-  color: #016aba;
+  color: #006d77;
   text-decoration: none;
 }
 
@@ -45,15 +40,11 @@ p {
   margin-bottom: 15px;
 }
 
-/**
- * Button
- */
-
 .button {
   padding: 10px 30px;
   text-decoration: none;
   color: #fff;
-  background: #016aba;
+  background: #006d77;
   border-radius: 5px;
   border: none;
   font-size: 20px;
@@ -66,30 +57,22 @@ p {
   opacity: 1;
 }
 
-/**
- * Body Container
- */
-
 .container {
   max-width: 1024px;
   min-height: 100vh;
-  background: #f9f9f9;
+  background: #e5f7fa;
   margin: 0 auto;
 }
 
-/**
- * Top Navigation
- */
-
 .menu {
   height: 4em;
-  background-color: #e46855;
+  background-color: #83c5be;
 }
 
 .menu h1 {
   position: relative;
   padding: 5px 0 0 8px;
-  color: #f9f9f9;
+  color: #e5f7fa;
   font-size: 1.8em;
   font-style: italic;
 }
@@ -102,7 +85,7 @@ p {
 .menu a {
   text-decoration: none;
   padding: 0 15px;
-  color: #fff;
+  color: #e5f7fa;
   font-size: 20px;
   font-weight: bold;
 }
@@ -185,25 +168,17 @@ p {
   background: #f3f3f3;
 }
 
-/**
- * Content Area
- */
-
 .body {
   padding: 15px;
 }
 
-/**
- * Similar to Jumbotron
- */
-
 .jumbo {
   padding: 50px;
-  background: #f6f6f6;
+  background: #edf6f9;
 }
 
 .jumbo:hover {
-  background-color: #f3f3f3;
+  background-color: #d8e9e9;
 }
 
 .jumbo h2 {
@@ -223,13 +198,9 @@ p {
   right: -20px;
 }
 
-/**
- * Individual Rental Listing
- */
-
 .rental {
   margin-top: 15px;
-  background-color: #f6f6f6;
+  background-color: #edf6f9;
   padding: 20px 25px;
   display: flex;
   justify-content: space-between;
@@ -238,7 +209,7 @@ p {
 }
 
 .rental:hover {
-  background-color: #f3f3f3;
+  background-color: #d8e9e9;
 }
 
 .rental img {
@@ -300,8 +271,6 @@ p {
   margin-bottom: -15px;
   text-align: center;
   color: #016aba;
-
-  /* This is needed to fix a safari clipping issue */
   position: relative;
 }
 
@@ -429,10 +398,6 @@ p {
   }
 }
 
-/**
- * Utilities
- */
-
 .light {
   font-weight: 300;
 }
@@ -454,7 +419,7 @@ p {
 }
 
 .tomster {
-  background: url("../assets/images/teaching-tomster.png");
+  background: url("../assets/images/teaching-mikester.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 200px;

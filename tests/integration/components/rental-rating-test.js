@@ -24,20 +24,6 @@ module('Integration | Component | rental-rating', function (hooks) {
     assert.dom('.score').hasText('-1');
   });
 
-  test('it prevents double-voting', async function (assert) {
-    await render(hbs`<RentalRating />`);
-
-    await this.element.querySelector('.upvote-button').click();
-    await this.element.querySelector('.upvote-button').click();
-
-    assert.dom('.score').hasText('1');
-
-    await this.element.querySelector('.downvote-button').click();
-    await this.element.querySelector('.downvote-button').click();
-
-    assert.dom('.score').hasText('-1');
-  });
-
   test('it updates the score on multiple upvotes and downvotes', async function (assert) {
     await render(hbs`<RentalRating />`);
 

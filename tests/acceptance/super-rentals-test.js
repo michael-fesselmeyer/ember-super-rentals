@@ -21,7 +21,7 @@ module('Acceptance | super rentals', function (hooks) {
 
   test('viewing the details of a rental property', async function (assert) {
     await visit('/');
-    assert.dom('.rental').exists({ count: 3 });
+    assert.dom('.rental').exists({ count: 12 });
 
     await click('.rental:first-of-type a');
     assert.strictEqual(currentURL(), '/rentals/grand-old-mansion');

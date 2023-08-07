@@ -1,0 +1,10 @@
+{{yield}}
+<div>
+  Score: <span class="score">{{this.score}}</span>
+  <button class="upvote-button" {{on "click" this.upvote}}>
+    Upvote
+  </button>
+  <button class="downvote-button" {{on "click" this.downvote}}>
+    Downvote
+  </button>
+</div>

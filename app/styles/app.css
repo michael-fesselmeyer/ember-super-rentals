@@ -419,7 +419,7 @@ p {
 }
 
 .tomster {
-  background: url("../assets/images/teaching-mikester.png");
+  background: url("/assets/images/teaching-mikester.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 200px;
